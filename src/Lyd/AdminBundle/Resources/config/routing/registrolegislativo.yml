@@ -1,0 +1,30 @@
+registrolegislativo:
+    pattern:  /
+    defaults: { _controller: "LydAdminBundle:RegistroLegislativo:index" }
+
+registrolegislativo_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "LydAdminBundle:RegistroLegislativo:show" }
+
+registrolegislativo_new:
+    pattern:  /new
+    defaults: { _controller: "LydAdminBundle:RegistroLegislativo:new" }
+
+registrolegislativo_create:
+    pattern:  /create
+    defaults: { _controller: "LydAdminBundle:RegistroLegislativo:create" }
+    requirements: { _method: post }
+
+registrolegislativo_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "LydAdminBundle:RegistroLegislativo:edit" }
+
+registrolegislativo_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "LydAdminBundle:RegistroLegislativo:update" }
+    requirements: { _method: post }
+
+registrolegislativo_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "LydAdminBundle:RegistroLegislativo:delete" }
+    requirements: { _method: post }

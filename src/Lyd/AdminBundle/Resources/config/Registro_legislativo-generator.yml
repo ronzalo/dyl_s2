@@ -1,0 +1,78 @@
+generator: admingenerator.generator.doctrine
+params:
+  i18n_catalog: RegistroLegislativo
+  model: Lyd\AdminBundle\Entity\RegistroLegislativo
+  namespace_prefix: Lyd
+  bundle_name: AdminBundle
+  fields: 
+    numero_boletin:
+      label: Número Boletin
+    fecha_cuenta:
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1  
+    iniciativa:
+      label: Iniciativa
+      formType: choice
+      addFormOptions:
+        choices:
+          mensaje: Mensaje
+          mocion: Moción    
+    origen:
+      label: Origen
+      formType: choice
+      addFormOptions:
+        choices:
+          camara: Camara
+          ejecutivo: Ejecutivo
+    resena:
+      label: Reseña
+    fecha_resena:
+      label: Fecha Reseña
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1
+      
+
+builders:
+  list:
+    batch_actions:
+    delete: ~
+    params:
+      title: Registros Legislativo
+      display: [numero_boletin, estado, suma_proyecto]
+      sort: [ id, DESC ]
+      actions:
+        new: ~
+      object_actions:
+        delete:
+          confirm: ¿Está seguro de eliminar registro?
+  filters:
+    params:
+      display: [numero_boletin, fecha_cuenta, estado, iniciativa, origen]
+  new:
+    params:
+      title: Nuevo Registro Legislativo
+      display: [numero_boletin, fecha_cuenta, estado, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
+        
+      actions:
+        list: ~
+  edit:
+    params:
+      title: Editar
+      display: [suma_proyecto]
+      actions:
+        list: ~
+  delete: ~

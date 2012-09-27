@@ -1,0 +1,30 @@
+Lyd\AdminBundle\Entity\RegistroLegislativo:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        numero_boletin:
+            type: integer
+        fecha_cuenta:
+            type: date
+        estado:
+            type: boolean
+        iniciativa:
+            type: string    
+        origen:
+            type: string
+        suma_proyecto:
+            type: text
+        resumen:
+            type: text
+        descriptor:
+            type: text
+        resena:
+            type: text
+        fecha_resena:
+            type: date    
+    lifecycleCallbacks: {  }

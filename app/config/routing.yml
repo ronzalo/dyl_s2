@@ -1,3 +1,9 @@
+LydAdminBundle_admin_lyd_admin_bundle_registro_legislativo:
+    resource: "@LydAdminBundle/Controller/Registro_legislativo/"
+    type:     admingenerator
+    prefix:   /admin/registro_legislativo
+
+    
 # Internal routing configuration to handle ESI
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

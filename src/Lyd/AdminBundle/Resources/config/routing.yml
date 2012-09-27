@@ -1,0 +1,4 @@
+lyd_admin_registrolegislativo:
+    resource: "@LydAdminBundle/Resources/config/routing/registrolegislativo.yml"
+    prefix:   /registrolegislativo
+
