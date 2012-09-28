@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Lyd\AdminBundle\Entity\Ministerio
+  namespace_prefix: Lyd
+  bundle_name: AdminBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Ministerios
+      display: ~
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: Nuevo Ministerio
+      display: [ nombre]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: Editar "%object%"|{ %object%: Ministerio.nombre }|
+      display: [ nombre]
+      actions:
+        list: ~
+  delete: ~

@@ -27,11 +27,50 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
             type: text
         fecha_resena:
             type: date
+        reglamentos:
+            type: text
+        numero_decreto:
+            type: integer
+        fecha_diario_oficial:
+            type: date
+        observaciones:
+            type: text
+        encargado_legislativo:
+            type: string
+            length: 255
+        fecha_rechazo:
+            type: date
+        fecha_retiro:
+            type: date
+        fecha_archivo:
+            type: date
+        fecha_publicacion:
+            type: date
+        numero_ley:
+            type: integer
+        numero_decreto:
+            type: integer
+        fecha_fallo_1:
+            type: date
+        fecha_fallo_2:
+            type: date
     manyToOne:
       comision:
         targetEntity: Lyd\AdminBundle\Entity\Comision
         inversedBy: registros
         joinColumn:
           name: comision_id
-          referencedColumnName: id        
+          referencedColumnName: id
+      investigador:
+        targetEntity: Lyd\AdminBundle\Entity\Investigador
+        inversedBy: registros
+        joinColumn:
+          name: investigador_id
+          referencedColumnName: id
+      ministerio:
+        targetEntity: Lyd\AdminBundle\Entity\Ministerio
+        inversedBy: registros
+        joinColumn:
+          name: ministerio_id
+          referencedColumnName: id    
     lifecycleCallbacks: {  }

@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Lyd\AdminBundle\Entity\Investigador
+  namespace_prefix: Lyd
+  bundle_name: AdminBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Investigadores
+      display: ~
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: Nuevo Investigador
+      display: [ nombre]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: You're editing the object "%object%"|{ %object%: Investigador.nombre }|
+      display: [ nombre]
+      actions:
+        list: ~
+  delete: ~

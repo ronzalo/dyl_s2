@@ -1,3 +1,13 @@
+LydAdminBundle_admin_lyd_admin_bundle_investigador:
+    resource: "@LydAdminBundle/Controller/Investigador/"
+    type:     admingenerator
+    prefix:   /admin/lyd_admin_bundle/investigador
+
+LydAdminBundle_admin_lyd_admin_bundle_ministerio:
+    resource: "@LydAdminBundle/Controller/Ministerio/"
+    type:     admingenerator
+    prefix:   /admin/lyd_admin_bundle/ministerio
+
 comision:
     resource: "@LydAdminBundle/Controller/Comision/"
     type:     admingenerator
