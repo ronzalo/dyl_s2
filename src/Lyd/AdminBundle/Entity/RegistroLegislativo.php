@@ -305,4 +305,32 @@ class RegistroLegislativo
     {
         return $this->iniciativa;
     }
+    /**
+     * @var Lyd\AdminBundle\Entity\Comision
+     */
+    private $comision;
+
+
+    /**
+     * Set comision
+     *
+     * @param Lyd\AdminBundle\Entity\Comision $comision
+     * @return RegistroLegislativo
+     */
+    public function setComision(\Lyd\AdminBundle\Entity\Comision $comision = null)
+    {
+        $this->comision = $comision;
+    
+        return $this;
+    }
+
+    /**
+     * Get comision
+     *
+     * @return Lyd\AdminBundle\Entity\Comision 
+     */
+    public function getComision()
+    {
+        return $this->comision;
+    }
 }

@@ -1,4 +1,9 @@
-LydAdminBundle_admin_lyd_admin_bundle_registro_legislativo:
+comision:
+    resource: "@LydAdminBundle/Controller/Comision/"
+    type:     admingenerator
+    prefix:   /admin/comision
+
+registro_legislativo:
     resource: "@LydAdminBundle/Controller/Registro_legislativo/"
     type:     admingenerator
     prefix:   /admin/registro_legislativo

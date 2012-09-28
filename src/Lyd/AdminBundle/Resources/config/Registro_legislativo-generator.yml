@@ -5,8 +5,6 @@ params:
   namespace_prefix: Lyd
   bundle_name: AdminBundle
   fields: 
-    numero_boletin:
-      label: Número Boletin
     fecha_cuenta:
       formType: birthday
       addFormOptions:
@@ -52,7 +50,7 @@ builders:
     delete: ~
     params:
       title: Registros Legislativo
-      display: [numero_boletin, estado, suma_proyecto]
+      display: [numero_boletin, comision, suma_proyecto, estado]
       sort: [ id, DESC ]
       actions:
         new: ~
@@ -61,12 +59,39 @@ builders:
           confirm: ¿Está seguro de eliminar registro?
   filters:
     params:
-      display: [numero_boletin, fecha_cuenta, estado, iniciativa, origen]
+      display: [ fecha_cuenta, estado, iniciativa, origen]
   new:
     params:
       title: Nuevo Registro Legislativo
-      display: [numero_boletin, fecha_cuenta, estado, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
-        
+      fields: 
+        comision:
+          label: ~
+        estado:
+          formType: choice
+          addFormOptions:
+            choices:
+              true: Activo
+              false: Inactivo
+        suma_proyecto:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        resumen:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        descriptor:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        resena:
+          addFormOptions:
+            attr:
+              class: textarea_sm      
+              
+      display:
+        NONE: [[numero_boletin, comision]]
+        "Legis": [fecha_cuenta, estado, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
       actions:
         list: ~
   edit:

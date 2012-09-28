@@ -40,7 +40,7 @@ class NewController extends BaseController
 
                 $this->get('session')->setFlash('success', $this->get('translator')->trans("object.saved.success", array(), 'Admingenerator') );
 
-                return new RedirectResponse($this->generateUrl("Lyd_AdminBundle_Registro_legislativo_edit", array('pk' => $RegistroLegislativo->getId()) ));
+                return new RedirectResponse($this->generateUrl("Lyd_AdminBundle_Registro_legislativo_list" ));
             } catch (\Exception $e) {
                 $this->get('session')->setFlash('error',  $this->get('translator')->trans("object.saved.error", array(), 'Admingenerator') );
                 $this->onException($e, $form, $RegistroLegislativo);

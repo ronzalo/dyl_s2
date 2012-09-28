@@ -26,5 +26,12 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
         resena:
             type: text
         fecha_resena:
-            type: date    
+            type: date
+    manyToOne:
+      comision:
+        targetEntity: Lyd\AdminBundle\Entity\Comision
+        inversedBy: registros
+        joinColumn:
+          name: comision_id
+          referencedColumnName: id        
     lifecycleCallbacks: {  }

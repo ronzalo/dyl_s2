@@ -277,4 +277,60 @@ class RegistroLegislativo
     {
         return $this->fecha_resena;
     }
+    /**
+     * @var string $iniciativa
+     */
+    private $iniciativa;
+
+
+    /**
+     * Set iniciativa
+     *
+     * @param string $iniciativa
+     * @return RegistroLegislativo
+     */
+    public function setIniciativa($iniciativa)
+    {
+        $this->iniciativa = $iniciativa;
+    
+        return $this;
+    }
+
+    /**
+     * Get iniciativa
+     *
+     * @return string 
+     */
+    public function getIniciativa()
+    {
+        return $this->iniciativa;
+    }
+    /**
+     * @var Lyd\AdminBundle\Entity\Comision
+     */
+    private $comision;
+
+
+    /**
+     * Set comision
+     *
+     * @param Lyd\AdminBundle\Entity\Comision $comision
+     * @return RegistroLegislativo
+     */
+    public function setComision(\Lyd\AdminBundle\Entity\Comision $comision = null)
+    {
+        $this->comision = $comision;
+    
+        return $this;
+    }
+
+    /**
+     * Get comision
+     *
+     * @return Lyd\AdminBundle\Entity\Comision 
+     */
+    public function getComision()
+    {
+        return $this->comision;
+    }
 }
