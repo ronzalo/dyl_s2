@@ -9,7 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class RegistroLegislativo
 {
-  
     /**
      * @var integer $id
      */
@@ -21,24 +20,29 @@ class RegistroLegislativo
     private $numero_boletin;
 
     /**
-     * @var string $suma_proyecto
+     * @var \DateTime $fecha_cuenta
      */
-    private $suma_proyecto;
-    
+    private $fecha_cuenta;
+
     /**
      * @var boolean $estado
      */
     private $estado;
 
     /**
-     * @var \DateTime $fecha_cuenta
+     * @var string $iniciativa
      */
-    private $fecha_cuenta;
-    
+    private $iniciativa;
+
     /**
      * @var string $origen
      */
     private $origen;
+
+    /**
+     * @var string $suma_proyecto
+     */
+    private $suma_proyecto;
 
     /**
      * @var string $resumen
@@ -54,6 +58,11 @@ class RegistroLegislativo
      * @var string $resena
      */
     private $resena;
+
+    /**
+     * @var \DateTime $fecha_resena
+     */
+    private $fecha_resena;
 
     /**
      * @var string $reglamentos
@@ -116,6 +125,22 @@ class RegistroLegislativo
     private $fecha_fallo_2;
 
     /**
+     * @var Lyd\AdminBundle\Entity\Comision
+     */
+    private $comision;
+
+    /**
+     * @var Lyd\AdminBundle\Entity\Investigador
+     */
+    private $investigador;
+
+    /**
+     * @var Lyd\AdminBundle\Entity\Ministerio
+     */
+    private $ministerio;
+
+
+    /**
      * Get id
      *
      * @return integer 
@@ -125,29 +150,6 @@ class RegistroLegislativo
         return $this->id;
     }
 
-    /**
-     * Set estado
-     *
-     * @param boolean $estado
-     * @return RegistroLegislativo
-     */
-    public function setEstado($estado)
-    {
-        $this->estado = $estado;
-    
-        return $this;
-    }
-
-    /**
-     * Get estado
-     *
-     * @return boolean 
-     */
-    public function getEstado()
-    {
-        return $this->estado;
-    }
-    
     /**
      * Set numero_boletin
      *
@@ -172,29 +174,6 @@ class RegistroLegislativo
     }
 
     /**
-     * Set suma_proyecto
-     *
-     * @param string $sumaProyecto
-     * @return RegistroLegislativo
-     */
-    public function setSumaProyecto($sumaProyecto)
-    {
-        $this->suma_proyecto = $sumaProyecto;
-    
-        return $this;
-    }
-
-    /**
-     * Get suma_proyecto
-     *
-     * @return string 
-     */
-    public function getSumaProyecto()
-    {
-        return $this->suma_proyecto;
-    }
-
-    /**
      * Set fecha_cuenta
      *
      * @param \DateTime $fechaCuenta
@@ -216,7 +195,52 @@ class RegistroLegislativo
     {
         return $this->fecha_cuenta;
     }
+
+    /**
+     * Set estado
+     *
+     * @param boolean $estado
+     * @return RegistroLegislativo
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
     
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return boolean 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set iniciativa
+     *
+     * @param string $iniciativa
+     * @return RegistroLegislativo
+     */
+    public function setIniciativa($iniciativa)
+    {
+        $this->iniciativa = $iniciativa;
+    
+        return $this;
+    }
+
+    /**
+     * Get iniciativa
+     *
+     * @return string 
+     */
+    public function getIniciativa()
+    {
+        return $this->iniciativa;
+    }
 
     /**
      * Set origen
@@ -239,6 +263,29 @@ class RegistroLegislativo
     public function getOrigen()
     {
         return $this->origen;
+    }
+
+    /**
+     * Set suma_proyecto
+     *
+     * @param string $sumaProyecto
+     * @return RegistroLegislativo
+     */
+    public function setSumaProyecto($sumaProyecto)
+    {
+        $this->suma_proyecto = $sumaProyecto;
+    
+        return $this;
+    }
+
+    /**
+     * Get suma_proyecto
+     *
+     * @return string 
+     */
+    public function getSumaProyecto()
+    {
+        return $this->suma_proyecto;
     }
 
     /**
@@ -309,11 +356,6 @@ class RegistroLegislativo
     {
         return $this->resena;
     }
-    /**
-     * @var \DateTime $fecha_resena
-     */
-    private $fecha_resena;
-
 
     /**
      * Set fecha_resena
@@ -337,63 +379,6 @@ class RegistroLegislativo
     {
         return $this->fecha_resena;
     }
-    /**
-     * @var string $iniciativa
-     */
-    private $iniciativa;
-
-
-    /**
-     * Set iniciativa
-     *
-     * @param string $iniciativa
-     * @return RegistroLegislativo
-     */
-    public function setIniciativa($iniciativa)
-    {
-        $this->iniciativa = $iniciativa;
-    
-        return $this;
-    }
-
-    /**
-     * Get iniciativa
-     *
-     * @return string 
-     */
-    public function getIniciativa()
-    {
-        return $this->iniciativa;
-    }
-    /**
-     * @var Lyd\AdminBundle\Entity\Comision
-     */
-    private $comision;
-
-
-    /**
-     * Set comision
-     *
-     * @param Lyd\AdminBundle\Entity\Comision $comision
-     * @return RegistroLegislativo
-     */
-    public function setComision(\Lyd\AdminBundle\Entity\Comision $comision = null)
-    {
-        $this->comision = $comision;
-    
-        return $this;
-    }
-
-    /**
-     * Get comision
-     *
-     * @return Lyd\AdminBundle\Entity\Comision 
-     */
-    public function getComision()
-    {
-        return $this->comision;
-    }
-    
 
     /**
      * Set reglamentos
@@ -670,11 +655,52 @@ class RegistroLegislativo
     {
         return $this->fecha_fallo_2;
     }
-    /**
-     * @var Lyd\AdminBundle\Entity\Ministerio
-     */
-    private $ministerio;
 
+    /**
+     * Set comision
+     *
+     * @param Lyd\AdminBundle\Entity\Comision $comision
+     * @return RegistroLegislativo
+     */
+    public function setComision(\Lyd\AdminBundle\Entity\Comision $comision = null)
+    {
+        $this->comision = $comision;
+    
+        return $this;
+    }
+
+    /**
+     * Get comision
+     *
+     * @return Lyd\AdminBundle\Entity\Comision 
+     */
+    public function getComision()
+    {
+        return $this->comision;
+    }
+
+    /**
+     * Set investigador
+     *
+     * @param Lyd\AdminBundle\Entity\Investigador $investigador
+     * @return RegistroLegislativo
+     */
+    public function setInvestigador(\Lyd\AdminBundle\Entity\Investigador $investigador = null)
+    {
+        $this->investigador = $investigador;
+    
+        return $this;
+    }
+
+    /**
+     * Get investigador
+     *
+     * @return Lyd\AdminBundle\Entity\Investigador 
+     */
+    public function getInvestigador()
+    {
+        return $this->investigador;
+    }
 
     /**
      * Set ministerio

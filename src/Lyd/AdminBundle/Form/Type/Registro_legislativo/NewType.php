@@ -6,4 +6,4 @@ use Admingenerated\LydAdminBundle\Form\BaseRegistro_legislativoType\NewType as B
 
 class NewType extends BaseNewType
 {
-}
+  }

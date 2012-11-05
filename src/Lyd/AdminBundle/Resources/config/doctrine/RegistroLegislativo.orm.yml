@@ -40,20 +40,28 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
             length: 255
         fecha_rechazo:
             type: date
+            nullable: true
         fecha_retiro:
             type: date
+            nullable: true
         fecha_archivo:
             type: date
+            nullable: true
         fecha_publicacion:
             type: date
+            nullable: true
         numero_ley:
             type: integer
+            nullable: true
         numero_decreto:
             type: integer
+            nullable: true
         fecha_fallo_1:
             type: date
+            nullable: true
         fecha_fallo_2:
             type: date
+            nullable: true
     manyToOne:
       comision:
         targetEntity: Lyd\AdminBundle\Entity\Comision

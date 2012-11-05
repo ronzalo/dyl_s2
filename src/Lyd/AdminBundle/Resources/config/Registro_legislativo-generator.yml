@@ -57,9 +57,73 @@ params:
             from: <?php echo date("Y"); ?>
             
             to: 1970
-            step: 1        
-      
+            step: 1
+            
+    fecha_rechazo:
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1         
+   
+    fecha_retiro:
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1
+            
+    fecha_archivo:
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1 
 
+    fecha_publicacion:
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1         
+   
+    fecha_fallo_1:
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1
+            
+    fecha_fallo_2:
+      formType: birthday
+      addFormOptions:
+        format: "d-M-y"
+        years:
+          .range:
+            from: <?php echo date("Y"); ?>
+            
+            to: 1970
+            step: 1 
 builders:
   list:
     batch_actions:
@@ -117,6 +181,7 @@ builders:
         NONE: [[numero_boletin, comision]]
         "Legislativo": [fecha_cuenta, estado, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
         "Tramitacion": [reglamentos, ministerio, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
+        "Publicacion": [fecha_rechazo, fecha_retiro, fecha_archivo, fecha_publicacion, numero_ley, fecha_fallo_1, fecha_fallo_2]
       actions:
         list: ~
   edit:
