@@ -5,11 +5,11 @@ params:
   namespace_prefix: Lyd
   bundle_name: AdminBundle
   stylesheets:
-    - bundles/coolfieldset/css/jquery.coolfieldset.css
+    - bundles/lyadminbundle/css/jquery.coolfieldset.css
   javascripts:
-    - bundles/coolfieldset/js/jquery.js
-    - bundles/coolfieldset/js/jquery.coolfieldset.js
-    - bundles/lyadminbundle/js/fieldset.js
+    - bundles/lyadminbundle/js/jquery.js
+    - bundles/lyadminbundle/js/jquery.coolfieldset.js
+    - bundles/lyadminbundle/js/fieldset.js  
   fields: 
     fecha_cuenta:
       formType: birthday
@@ -135,6 +135,7 @@ builders:
       actions:
         new: ~
       object_actions:
+        edit: ~
         delete:
           confirm: ¿Está seguro de eliminar registro?
   filters:
@@ -187,7 +188,12 @@ builders:
   edit:
     params:
       title: Editar
-      display: [suma_proyecto]
+      display: 
+        NONE: [[comision]]
+        "Legislativo": [fecha_cuenta, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
+        "Tramitacion": [reglamentos, ministerio, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
+        "Publicacion": [fecha_rechazo, fecha_retiro, fecha_archivo, fecha_publicacion, numero_ley, fecha_fallo_1, fecha_fallo_2]
+
       actions:
         list: ~
   delete: ~
