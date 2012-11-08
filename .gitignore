@@ -1,3 +1,10 @@
+# Generic Files
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
 # Bootstrap
 app/bootstrap*
 
