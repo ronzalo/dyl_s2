@@ -68,8 +68,8 @@ admingenerator_generator:
     use_doctrine_orm: true
     use_doctrine_odm: false
     stylesheets:
-      - { path: bundles/lyadminbundle/css/style.css }
-    
+      - { path: bundles/lyadminbundle/css/jquery.coolfieldset.css } 
+
 knp_menu:
     twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer
         template: knp_menu.html.twig
