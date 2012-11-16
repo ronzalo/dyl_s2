@@ -13,6 +13,7 @@ app/bootstrap*
 */cache/*
 web/uploads/*
 web/bundles/*
+vendor/
 
 # Configuration files
 app/config/parameters.ini
