@@ -24,6 +24,7 @@ object.deleted.error: Este registro no puede ser borrado
 # Form
 form.btn_save: Guardar
 form.type_collection.add: Añadir
+form.delete.confirm: Borrar
 
 # Actions
 List: Listar

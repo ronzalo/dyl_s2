@@ -5,22 +5,19 @@ params:
   namespace_prefix: Lyd
   bundle_name: AdminBundle
   stylesheets:
-    - bundles/lyadminbundle/css/jquery.coolfieldset.css
+    - bundles/lydadmin/css/jquery.coolfieldset.css
+    - bundles/lydadmin/css/estilos.css
   javascripts:
-    - bundles/lyadminbundle/js/jquery.js
-    - bundles/lyadminbundle/js/jquery.coolfieldset.js
-    - bundles/lyadminbundle/js/fieldset.js  
+    - bundles/lydadmin/js/jquery.js
+    - bundles/lydadmin/js/jquery.coolfieldset.js
+    - bundles/lydadmin/js/fieldset.js  
   fields: 
-    fecha_cuenta:
-      formType: birthday
+    estado:
+      formType: choice
       addFormOptions:
-        format: "d-M-y"
-        years:
-          .range:
-            from: <?php echo date("Y"); ?>
-            
-            to: 1970
-            step: 1  
+        choices:
+          true: Activo
+          false: Inactivo
     iniciativa:
       label: Iniciativa
       formType: choice
@@ -126,7 +123,7 @@ params:
             step: 1 
 builders:
   list:
-    batch_actions:
+    batch_actions: ~
     delete: ~
     params:
       title: Registros Legislativo
@@ -140,19 +137,33 @@ builders:
           confirm: ¿Está seguro de eliminar registro?
   filters:
     params:
+      fecha_cuenta:
+        formType: daterange
+        addFormOptions:
+          format: "d-M-y"
+          years:
+            .range:
+              from: <?php echo date("Y"); ?>
+              
+              to: 1970
+              step: 1 
       display: [ fecha_cuenta, estado, iniciativa, origen]
   new:
     params:
       title: Nuevo Registro Legislativo
       fields: 
+        fecha_cuenta:
+          formType: birthday
+          addFormOptions:
+            format: "d-M-y"
+            years:
+              .range:
+                from: <?php echo date("Y"); ?>
+                
+                to: 1970
+                step: 1 
         comision:
           label: ~
-        estado:
-          formType: choice
-          addFormOptions:
-            choices:
-              true: Activo
-              false: Inactivo
         suma_proyecto:
           addFormOptions:
             attr:

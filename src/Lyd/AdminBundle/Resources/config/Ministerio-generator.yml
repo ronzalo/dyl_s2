@@ -1,5 +1,6 @@
 generator: admingenerator.generator.doctrine
 params:
+  i18n_catalog: RegistroLegislativo
   model: Lyd\AdminBundle\Entity\Ministerio
   namespace_prefix: Lyd
   bundle_name: AdminBundle
