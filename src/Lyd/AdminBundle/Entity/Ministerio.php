@@ -21,7 +21,7 @@ class Ministerio
 
 
     public function __toString() {
-      return $this->getNombre();
+      return sprintf('%d - %s', $this->getDigito(), $this->getNombre());
     }
     /**
      * Get id
@@ -54,5 +54,33 @@ class Ministerio
     public function getNombre()
     {
         return $this->nombre;
+    }
+    /**
+     * @var integer $digito
+     */
+    private $digito;
+
+
+    /**
+     * Set digito
+     *
+     * @param integer $digito
+     * @return Ministerio
+     */
+    public function setDigito($digito)
+    {
+        $this->digito = $digito;
+    
+        return $this;
+    }
+
+    /**
+     * Get digito
+     *
+     * @return integer 
+     */
+    public function getDigito()
+    {
+        return $this->digito;
     }
 }

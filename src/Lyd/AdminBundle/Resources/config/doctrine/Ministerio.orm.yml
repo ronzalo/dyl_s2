@@ -7,6 +7,8 @@ Lyd\AdminBundle\Entity\Ministerio:
             id: true
             generator:
                 strategy: AUTO
+        digito:
+            type: integer
         nombre:
             type: string
             length: 255

@@ -3,13 +3,15 @@ params:
   model: Lyd\AdminBundle\Entity\Comision
   namespace_prefix: Lyd
   bundle_name: AdminBundle
-  fields: ~
+  fields: 
+    digito:
+      label: Digito Verificador
 
 builders:
   list:
     params:
       title: Comisiones
-      display: ~
+      display: [ digito, nombre]
       actions:
         new: ~
       object_actions:
@@ -21,13 +23,13 @@ builders:
   new:
     params:
       title: Nueva Comisión
-      display: [ nombre]
+      display: [ digito, nombre]
       actions:
         list: ~
   edit:
     params:
       title: Editar "%object%"|{ %object%: Comision.nombre }|
-      display: [ nombre]
+      display: [ digito, nombre]
       actions:
         list: ~
   delete: ~

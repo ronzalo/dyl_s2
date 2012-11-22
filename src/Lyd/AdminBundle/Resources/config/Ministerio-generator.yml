@@ -4,13 +4,15 @@ params:
   model: Lyd\AdminBundle\Entity\Ministerio
   namespace_prefix: Lyd
   bundle_name: AdminBundle
-  fields: ~
+  fields: 
+    digito:
+      label: Digito Verificador
 
 builders:
   list:
     params:
       title: Ministerios
-      display: ~
+      display: [ digito, nombre]
       actions:
         new: ~
       object_actions:
@@ -22,13 +24,13 @@ builders:
   new:
     params:
       title: Nuevo Ministerio
-      display: [ nombre]
+      display: [ digito, nombre]
       actions:
         list: ~
   edit:
     params:
       title: Editar "%object%"|{ %object%: Ministerio.nombre }|
-      display: [ nombre]
+      display: [ digito, nombre]
       actions:
         list: ~
   delete: ~

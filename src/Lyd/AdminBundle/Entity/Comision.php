@@ -21,7 +21,7 @@ class Comision
 
 
     public function __toString() {
-      return sprintf('%d - %s', $this->getId(), $this->getNombre());
+      return sprintf('%d - %s', $this->getDigito(), $this->getNombre());
     }
     /**
      * Get id
@@ -99,5 +99,33 @@ class Comision
     public function getRegistros()
     {
         return $this->registros;
+    }
+    /**
+     * @var integer $digito
+     */
+    private $digito;
+
+
+    /**
+     * Set digito
+     *
+     * @param integer $digito
+     * @return Comision
+     */
+    public function setDigito($digito)
+    {
+        $this->digito = $digito;
+    
+        return $this;
+    }
+
+    /**
+     * Get digito
+     *
+     * @return integer 
+     */
+    public function getDigito()
+    {
+        return $this->digito;
     }
 }
