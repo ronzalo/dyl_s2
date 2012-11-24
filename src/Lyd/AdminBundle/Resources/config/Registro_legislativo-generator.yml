@@ -126,7 +126,7 @@ builders:
     batch_actions: ~
     delete: ~
     params:
-      title: Registros Legislativo
+      title: Registros Legislativos
       display: [numero_boletin, comision, suma_proyecto, estado]
       sort: [ id, DESC ]
       actions:
@@ -204,7 +204,43 @@ builders:
         "Legislativo": [fecha_cuenta, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
         "Tramitacion": [reglamentos, ministerio, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
         "Publicacion": [fecha_rechazo, fecha_retiro, fecha_archivo, fecha_publicacion, numero_ley, fecha_fallo_1, fecha_fallo_2]
-
+      fields:
+        fecha_cuenta:
+          formType: birthday
+          addFormOptions:
+            format: "d-M-y"
+            years:
+              .range:
+                from: <?php echo date("Y"); ?>
+                
+                to: 1970
+                step: 1 
+        comision:
+          label: ~
+        suma_proyecto:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        resumen:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        descriptor:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        resena:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        reglamentos:
+          addFormOptions:
+            attr:
+              class: textarea_sm
+        observaciones:
+          addFormOptions:
+            attr:
+              class: textarea_sm
       actions:
         list: ~
   delete: ~

@@ -27,18 +27,17 @@ class Builder extends ContainerAware{
     {
         $menu = $this->factory->createItem('root', array('childrenAttributes' => array('id' => 'main_navigation', 'class'=>'menu', 'style' => 'float: left;') ) );
 
-        $admin = $menu->addChild('Admin', array('uri' => '#'));
-        $admin->setLinkAttributes(array('class'=>'sub main'));
+        $registro = $menu->addChild('Registro', array('route' => 'Lyd_AdminBundle_Registro_legislativo_list'));
+        $registro->setLinkAttributes(array('class'=>'sub main'));
 
-        $admin->addChild('Comision', array('route' => 'Lyd_AdminBundle_Comision_list'));
-        $admin->addChild('Registro', array('route' => 'Lyd_AdminBundle_Registro_legislativo_list'));
-        
-        $extra = $menu->addChild('Extra', array('uri' => '#'));
-        $extra->setLinkAttributes(array('class'=>'sub main'));
+        $comision = $menu->addChild('Comision', array('route' => 'Lyd_AdminBundle_Comision_list'));
+        $comision->setLinkAttributes(array('class'=>'sub main'));
 
-        $extra->addChild('Investigador', array('route' => 'Lyd_AdminBundle_Investigador_list'));
-        $extra->addChild('Ministerio', array('route' => 'Lyd_AdminBundle_Ministerio_list'));
+        $investigador = $menu->addChild('Investigador', array('route' => 'Lyd_AdminBundle_Investigador_list'));
+        $investigador->setLinkAttributes(array('class'=>'sub main'));
 
+        $ministerio = $menu->addChild('Ministerio', array('route' => 'Lyd_AdminBundle_Ministerio_list'));
+        $ministerio->setLinkAttributes(array('class'=>'sub main'));
 
         return $menu;
     }

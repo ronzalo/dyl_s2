@@ -19,7 +19,7 @@ builders:
         delete: ~
   filters:
     params:
-      display: ~
+      display: [ nombre ]
   new:
     params:
       title: Nueva Comisión
