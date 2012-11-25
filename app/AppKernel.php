@@ -20,12 +20,15 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Lyd\AdminBundle\LydAdminBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle(),
             new Admingenerator\OldThemeBundle\AdmingeneratorOldThemeBundle(),
+            new Admingenerator\UserBundle\AdmingeneratorUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 //            new Admingenerator\ActiveAdminThemeBundle\AdmingeneratorActiveAdminThemeBundle(),
+            new Lyd\UserBundle\LydUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
