@@ -8,11 +8,6 @@ LydAdminBundle_admin_lyd_admin_bundle_ministerio:
     type:     admingenerator
     prefix:   /admin/ministerio
 
-comision:
-    resource: "@LydAdminBundle/Controller/Comision/"
-    type:     admingenerator
-    prefix:   /admin/comision
-
 registro_legislativo:
     resource: "@LydAdminBundle/Controller/Registro_legislativo/"
     type:     admingenerator

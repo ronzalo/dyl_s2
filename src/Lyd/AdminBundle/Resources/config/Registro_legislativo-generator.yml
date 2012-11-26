@@ -11,7 +11,11 @@ params:
     - bundles/lydadmin/js/jquery.js
     - bundles/lydadmin/js/jquery.coolfieldset.js
     - bundles/lydadmin/js/fieldset.js  
-  fields: 
+  fields:
+    numero_boletin:
+      formType: text
+      addFormOptions:
+        max_length: 6
     estado:
       formType: choice
       addFormOptions:
@@ -127,7 +131,7 @@ builders:
     delete: ~
     params:
       title: Registros Legislativo
-      display: [numero_boletin, comision, suma_proyecto, estado]
+      display: [numero_boletin, ministerio, suma_proyecto, estado]
       sort: [ id, DESC ]
       actions:
         new: ~
@@ -162,8 +166,6 @@ builders:
                 
                 to: 1970
                 step: 1 
-        comision:
-          label: ~
         suma_proyecto:
           addFormOptions:
             attr:
@@ -190,9 +192,9 @@ builders:
               class: textarea_sm       
               
       display:
-        NONE: [[numero_boletin, comision]]
+        NONE: [[numero_boletin, ministerio]]
         "Legislativo": [fecha_cuenta, estado, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
-        "Tramitacion": [reglamentos, ministerio, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
+        "Tramitacion": [reglamentos, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
         "Publicacion": [fecha_rechazo, fecha_retiro, fecha_archivo, fecha_publicacion, numero_ley, fecha_fallo_1, fecha_fallo_2]
       actions:
         list: ~
@@ -200,9 +202,9 @@ builders:
     params:
       title: Editar
       display: 
-        NONE: [[comision]]
+        NONE: [[ministerio]]
         "Legislativo": [fecha_cuenta, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
-        "Tramitacion": [reglamentos, ministerio, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
+        "Tramitacion": [reglamentos, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
         "Publicacion": [fecha_rechazo, fecha_retiro, fecha_archivo, fecha_publicacion, numero_ley, fecha_fallo_1, fecha_fallo_2]
 
       actions:

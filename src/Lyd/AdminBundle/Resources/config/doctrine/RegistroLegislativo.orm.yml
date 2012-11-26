@@ -9,35 +9,50 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
                 strategy: AUTO
         numero_boletin:
             type: integer
+            length: 255
         fecha_cuenta:
             type: date
+            nullable: true
         estado:
             type: boolean
+            nullable: true
         iniciativa:
-            type: string    
+            type: string 
+            nullable: true
         origen:
             type: string
+            nullable: true
         suma_proyecto:
             type: text
+            nullable: true
         resumen:
             type: text
+            nullable: true
         descriptor:
             type: text
+            nullable: true
         resena:
             type: text
+            nullable: true
         fecha_resena:
             type: date
+            nullable: true
         reglamentos:
             type: text
+            nullable: true
         numero_decreto:
             type: integer
+            nullable: true
         fecha_diario_oficial:
             type: date
+            nullable: true
         observaciones:
             type: text
+            nullable: true
         encargado_legislativo:
             type: string
             length: 255
+            nullable: true
         fecha_rechazo:
             type: date
             nullable: true
@@ -63,12 +78,6 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
             type: date
             nullable: true
     manyToOne:
-      comision:
-        targetEntity: Lyd\AdminBundle\Entity\Comision
-        inversedBy: registros
-        joinColumn:
-          name: comision_id
-          referencedColumnName: id
       investigador:
         targetEntity: Lyd\AdminBundle\Entity\Investigador
         inversedBy: registros
