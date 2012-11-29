@@ -187,7 +187,7 @@ builders:
             attr:
               class: textarea_sm
         ministerio:
-          label: -
+          label: "-"
         observaciones:
           addFormOptions:
             attr:
@@ -196,7 +196,7 @@ builders:
       display:
         NONE: [[numero_boletin, ministerio]]
         "Legislativo": [fecha_cuenta, estado, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
-        "Tramitacion": [reglamentos, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
+        "Tramitacion": [reglamentos, numero_decreto, fecha_diario_oficial, observaciones, encargado, investigador]
         "Publicacion": [fecha_rechazo, fecha_retiro, fecha_archivo, fecha_publicacion, numero_ley, fecha_fallo_1, fecha_fallo_2]
       actions:
         list: ~
@@ -206,7 +206,7 @@ builders:
       display: 
         NONE: [[ministerio]]
         "Legislativo": [fecha_cuenta, iniciativa, origen, suma_proyecto, resumen, descriptor, resena, fecha_resena]
-        "Tramitacion": [reglamentos, numero_decreto, fecha_diario_oficial, observaciones, encargado_legislativo, investigador]
+        "Tramitacion": [reglamentos, numero_decreto, fecha_diario_oficial, observaciones, encargado, investigador]
         "Publicacion": [fecha_rechazo, fecha_retiro, fecha_archivo, fecha_publicacion, numero_ley, fecha_fallo_1, fecha_fallo_2]
 
       actions:

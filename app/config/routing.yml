@@ -1,3 +1,8 @@
+LydAdminBundle_admin_lyd_admin_bundle_Encargado:
+    resource: "@LydAdminBundle/Controller/Encargado/"
+    type:     admingenerator
+    prefix:   /admin/encargado
+
 LydAdminBundle_admin_lyd_admin_bundle_investigador:
     resource: "@LydAdminBundle/Controller/Investigador/"
     type:     admingenerator

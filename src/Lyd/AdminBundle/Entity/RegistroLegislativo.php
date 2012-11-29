@@ -697,4 +697,32 @@ class RegistroLegislativo
     {
         return $this->ministerio;
     }
+    /**
+     * @var Lyd\AdminBundle\Entity\EncargadoLegislativo
+     */
+    private $encargado;
+
+
+    /**
+     * Set encargado
+     *
+     * @param Lyd\AdminBundle\Entity\EncargadoLegislativo $encargado
+     * @return RegistroLegislativo
+     */
+    public function setEncargado(\Lyd\AdminBundle\Entity\EncargadoLegislativo $encargado = null)
+    {
+        $this->encargado = $encargado;
+    
+        return $this;
+    }
+
+    /**
+     * Get encargado
+     *
+     * @return Lyd\AdminBundle\Entity\EncargadoLegislativo 
+     */
+    public function getEncargado()
+    {
+        return $this->encargado;
+    }
 }

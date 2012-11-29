@@ -35,7 +35,10 @@ class Builder extends ContainerAware{
         
         $investigador = $menu->addChild('Investigador', array('route' => 'Lyd_AdminBundle_Investigador_list'));
         $investigador->setLinkAttributes(array('class'=>'sub main'));
-
+        
+        $encargado = $menu->addChild('Encargado', array('route' => 'Lyd_AdminBundle_Encargado_list'));
+        $encargado->setLinkAttributes(array('class'=>'sub main'));
+        
         return $menu;
     }
 }

@@ -1,0 +1,34 @@
+generator: admingenerator.generator.doctrine
+params:
+  i18n_catalog: RegistroLegislativo
+  model: Lyd\AdminBundle\Entity\EncargadoLegislativo
+  namespace_prefix: Lyd
+  bundle_name: AdminBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Encargados Legislativo
+      display: ~
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: Nuevo Encargado Legislativo
+      display: [ nombre]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: You're editing the object "%object%"|{ %object%: EncargadoLegislativo.nombre }|
+      display: [ nombre]
+      actions:
+        list: ~
+  delete: ~

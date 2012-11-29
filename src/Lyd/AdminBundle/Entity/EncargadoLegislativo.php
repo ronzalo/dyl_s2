@@ -5,9 +5,9 @@ namespace Lyd\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Lyd\AdminBundle\Entity\Ministerio
+ * Lyd\AdminBundle\Entity\EncargadoLegislativo
  */
-class Ministerio
+class EncargadoLegislativo
 {
     /**
      * @var integer $id
@@ -19,10 +19,13 @@ class Ministerio
      */
     private $nombre;
 
-
+    /**
+     * get toString method
+     */
     public function __toString() {
-      return sprintf('%d', $this->getDigito());
+      return $this->getNombre();
     }
+    
     /**
      * Get id
      *
@@ -37,7 +40,7 @@ class Ministerio
      * Set nombre
      *
      * @param string $nombre
-     * @return Ministerio
+     * @return EncargadoLegislativo
      */
     public function setNombre($nombre)
     {
@@ -54,33 +57,5 @@ class Ministerio
     public function getNombre()
     {
         return $this->nombre;
-    }
-    /**
-     * @var integer $digito
-     */
-    private $digito;
-
-
-    /**
-     * Set digito
-     *
-     * @param integer $digito
-     * @return Ministerio
-     */
-    public function setDigito($digito)
-    {
-        $this->digito = $digito;
-    
-        return $this;
-    }
-
-    /**
-     * Get digito
-     *
-     * @return integer 
-     */
-    public function getDigito()
-    {
-        return $this->digito;
     }
 }

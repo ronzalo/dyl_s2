@@ -49,10 +49,6 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
         observaciones:
             type: text
             nullable: true
-        encargado_legislativo:
-            type: string
-            length: 255
-            nullable: true
         fecha_rechazo:
             type: date
             nullable: true
@@ -83,6 +79,11 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
         joinColumn:
           name: investigador_id
           referencedColumnName: id
+      encargado:
+        targetEntity: Lyd\AdminBundle\Entity\EncargadoLegislativo
+        joinColumn:
+          name: encargado_id
+          referencedColumnName: id    
       ministerio:
         targetEntity: Lyd\AdminBundle\Entity\Ministerio
         joinColumn:
