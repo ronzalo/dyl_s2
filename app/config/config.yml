@@ -62,13 +62,13 @@ swiftmailer:
     
 admingenerator_generator:
     templates_dirs: [ %kernel.root_dir%/../vendor/cedriclombardot/admingenerator-oldtheme-bundle/Admingenerator/OldThemeBundle/Resources/templates ]
-    base_admin_template: AdmingeneratorOldThemeBundle::base_admin_assetic_less.html.twig
+    base_admin_template: LydAdminBundle::base_admin_assetic_less.html.twig
     knp_menu_class: Lyd\AdminBundle\Menu\Builder
     use_propel: false
     use_doctrine_orm: true
     use_doctrine_odm: false
     stylesheets:
-      - { path: bundles/lyadminbundle/css/jquery.coolfieldset.css } 
+      - { path: bundles/lydadmin/css/jquery.coolfieldset.css } 
 
 knp_menu:
     twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer

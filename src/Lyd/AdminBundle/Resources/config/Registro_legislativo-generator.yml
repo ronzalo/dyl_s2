@@ -15,7 +15,7 @@ params:
     numero_boletin:
       formType: text
       addFormOptions:
-        max_length: 6
+        max_length: 6        
     estado:
       formType: choice
       addFormOptions:
@@ -186,6 +186,8 @@ builders:
           addFormOptions:
             attr:
               class: textarea_sm
+        ministerio:
+          label: -
         observaciones:
           addFormOptions:
             attr:

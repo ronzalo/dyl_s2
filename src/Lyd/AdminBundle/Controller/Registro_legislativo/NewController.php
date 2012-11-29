@@ -5,6 +5,7 @@ namespace Lyd\AdminBundle\Controller\Registro_legislativo;
 use Admingenerator\GeneratorBundle\Controller\Doctrine\BaseController as BaseController;
 use Symfony\Component\HttpFoundation\RedirectResponse;use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Lyd\AdminBundle\Form\Type\Registro_legislativo\NewType;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class NewController extends BaseController
@@ -106,5 +107,14 @@ class NewController extends BaseController
         $em = $this->getDoctrine()->getEntityManager();
         $em->persist($RegistroLegislativo);
         $em->flush();
+    }
+    
+    public function verMinisterioAction(){
+      if($this->getRequest()->isXmlHttpRequest()){
+        $em = $this->getDoctrine()->getEntityManager();
+        $ministerio = $em->getRepository('LydAdminBundle:Ministerio')->findOneByDigito($_REQUEST["digito"]);
+        return new Response(json_encode($ministerio->getNombre()), 200, array('Content-Type', 'text/json'));;
+      }
+      
     }
 }

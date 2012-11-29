@@ -30,7 +30,7 @@ class Builder extends ContainerAware{
         $registro = $menu->addChild('Registro', array('route' => 'Lyd_AdminBundle_Registro_legislativo_list'));
         $registro->setLinkAttributes(array('class'=>'sub main'));
         
-        $ministerio = $menu->addChild('Ministerio', array('route' => 'Lyd_AdminBundle_Ministerio_list'));
+        $ministerio = $menu->addChild('Ministerio/Comisión', array('route' => 'Lyd_AdminBundle_Ministerio_list'));
         $ministerio->setLinkAttributes(array('class'=>'sub main'));
         
         $investigador = $menu->addChild('Investigador', array('route' => 'Lyd_AdminBundle_Investigador_list'));

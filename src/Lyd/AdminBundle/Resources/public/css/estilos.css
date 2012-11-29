@@ -1,2 +1,4 @@
 textarea.textarea_sm { height: 100px !important; max-height: 200px !important;}
 .collapsed {cursor: pointer;}
+#preview_ministerio { float: right; margin-left: 20px; }
+label[for=new_registrolegislativo_ministerio]{ float:none !important;}

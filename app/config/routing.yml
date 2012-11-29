@@ -13,6 +13,10 @@ registro_legislativo:
     type:     admingenerator
     prefix:   /admin/registro_legislativo
 
+ver_ministerio:
+    pattern:  /ver_ministerio
+    defaults: { _controller: LydAdminBundle:Registro_legislativo/New:verMinisterio }    
+
     
 # Internal routing configuration to handle ESI
 #_internal:
