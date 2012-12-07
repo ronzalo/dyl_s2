@@ -125,11 +125,6 @@ class RegistroLegislativo
     private $fecha_fallo_2;
 
     /**
-     * @var Lyd\AdminBundle\Entity\Comision
-     */
-    private $comision;
-
-    /**
      * @var Lyd\AdminBundle\Entity\Investigador
      */
     private $investigador;
@@ -656,28 +651,6 @@ class RegistroLegislativo
         return $this->fecha_fallo_2;
     }
 
-    /**
-     * Set comision
-     *
-     * @param Lyd\AdminBundle\Entity\Comision $comision
-     * @return RegistroLegislativo
-     */
-    public function setComision(\Lyd\AdminBundle\Entity\Comision $comision = null)
-    {
-        $this->comision = $comision;
-    
-        return $this;
-    }
-
-    /**
-     * Get comision
-     *
-     * @return Lyd\AdminBundle\Entity\Comision 
-     */
-    public function getComision()
-    {
-        return $this->comision;
-    }
 
     /**
      * Set investigador
