@@ -26,7 +26,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ AdmingeneratorOldThemeBundle ]
+    bundles:        [ AdmingeneratorGeneratorBundle  ]
     #java: /usr/bin/java
     filters:
         compass: ~
@@ -62,9 +62,9 @@ swiftmailer:
 
 # Admin Generator   
 admingenerator_generator:
-    templates_dirs: [ %kernel.root_dir%/../vendor/cedriclombardot/admingenerator-oldtheme-bundle/Admingenerator/OldThemeBundle/Resources/templates ]
-    base_admin_template: AdmingeneratorOldThemeBundle::base_admin_assetic_less.html.twig
-    knp_menu_class: Lyd\AdminBundle\Menu\Builder
+    #templates_dirs: [ %kernel.root_dir%/../vendor/cedriclombardot/admingenerator-oldtheme-bundle/Admingenerator/OldThemeBundle/Resources/templates ]
+    #base_admin_template: AdmingeneratorOldThemeBundle::base_admin_assetic_less.html.twig
+    #knp_menu_class: Lyd\AdminBundle\Menu\Builder
     use_propel: false
     use_doctrine_orm: true
     use_doctrine_odm: false
@@ -74,10 +74,7 @@ admingenerator_generator:
 
 # Menu
 knp_menu:
-    twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer
-        template: knp_menu.html.twig
-    templating: false # if true, enables the helper for PHP templates
-    default_renderer: twig # The renderer to use, list is also available by default
+    twig: true
 
 # FOSUser
 fos_user:
@@ -86,4 +83,4 @@ fos_user:
     user_class: Lyd\UserBundle\Entity\FosUser    
 
 admingenerator_user:
-     login_template: AdmingeneratorOldThemeBundle::base_login_assetic_less.html.twig
+     login_template: AdmingeneratorGeneratorBundle::base_login.html.twig

@@ -23,7 +23,6 @@ class AppKernel extends Kernel
             new Lyd\UserBundle\LydUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle(),
-            new Admingenerator\OldThemeBundle\AdmingeneratorOldThemeBundle(),
             new Admingenerator\UserBundle\AdmingeneratorUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
