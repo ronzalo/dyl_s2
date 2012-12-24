@@ -8,7 +8,6 @@ params:
     - bundles/lydadmin/css/jquery.coolfieldset.css
     - bundles/lydadmin/css/estilos.css
   javascripts:
-    - bundles/lydadmin/js/jquery.js
     - bundles/lydadmin/js/jquery.coolfieldset.js
     - bundles/lydadmin/js/fieldset.js  
   fields:
@@ -130,9 +129,12 @@ builders:
     batch_actions: ~
     delete: ~
     params:
-      title: Registros Legislativo
-      display: [numero_boletin, ministerio, suma_proyecto, estado]
+      title: Registros Legislativos
+      display: [numero_boletin, ministerio, resena, numero_decreto, fecha_diario_oficial, fecha_fallo_1]
       sort: [ id, DESC ]
+      fields:
+        ministerio:
+          label: Digito
       actions:
         new: ~
       object_actions:
@@ -170,6 +172,8 @@ builders:
           addFormOptions:
             attr:
               class: textarea_sm
+        ministerio:
+          label: &nbsp;      
         resumen:
           addFormOptions:
             attr:

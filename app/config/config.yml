@@ -17,6 +17,9 @@ framework:
     trust_proxy_headers: false # Whether or not the Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
     session:         ~
 
+jms_security_extra:
+     expressions: true
+
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
@@ -63,18 +66,16 @@ swiftmailer:
 # Admin Generator   
 admingenerator_generator:
     #templates_dirs: [ %kernel.root_dir%/../vendor/cedriclombardot/admingenerator-oldtheme-bundle/Admingenerator/OldThemeBundle/Resources/templates ]
-    #base_admin_template: AdmingeneratorOldThemeBundle::base_admin_assetic_less.html.twig
-    #knp_menu_class: Lyd\AdminBundle\Menu\Builder
+    #base_admin_template: AdmingeneratorBundle::base_admin_assetic_less.html.twig
+    knp_menu_class: Lyd\AdminBundle\Menu\Menu
     use_propel: false
     use_doctrine_orm: true
     use_doctrine_odm: false
-    stylesheets:
-      - { path: bundles/lyadminbundle/css/jquery.coolfieldset.css }
-
 
 # Menu
 knp_menu:
-    twig: true
+    twig:
+        template: AdmingeneratorGeneratorBundle:KnpMenu:knp_menu_trans.html.twig
 
 # FOSUser
 fos_user:

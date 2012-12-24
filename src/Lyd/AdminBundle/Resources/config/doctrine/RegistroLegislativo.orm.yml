@@ -80,13 +80,11 @@ Lyd\AdminBundle\Entity\RegistroLegislativo:
     manyToOne:
       investigador:
         targetEntity: Lyd\AdminBundle\Entity\Investigador
-        inversedBy: registros
         joinColumn:
           name: investigador_id
           referencedColumnName: id
       ministerio:
         targetEntity: Lyd\AdminBundle\Entity\Ministerio
-        inversedBy: registros
         joinColumn:
           name: ministerio_id
           referencedColumnName: id    

@@ -1,7 +1,7 @@
 AdmingeneratorDashboard_welcome:
     pattern:   /admin/dashboard
     defaults:  { _controller: AdmingeneratorGeneratorBundle:Dashboard:welcome }
-    
+
 AdmingeneratorDashboard_documentation:
     pattern:   /admin/documentation/{document}
     defaults:  { _controller: AdmingeneratorGeneratorBundle:Dashboard:documentation }
@@ -9,7 +9,7 @@ AdmingeneratorDashboard_documentation:
 lyd_user:
     resource: "@LydUserBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /admin/registro_legislativo
 
 LydAdminBundle_admin_lyd_admin_bundle_investigador:
     resource: "@LydAdminBundle/Controller/Investigador/"
@@ -43,7 +43,11 @@ fos_user_resetting:
 
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile    
+    prefix: /profile
+
+ver_ministerio:
+    pattern:  /ver_ministerio
+    defaults: { _controller: LydAdminBundle:Registro_legislativo/New:verMinisterio }
 
 # Internal routing configuration to handle ESI
 #_internal:

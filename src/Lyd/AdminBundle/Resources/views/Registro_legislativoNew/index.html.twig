@@ -1,1 +1,35 @@
 {% extends_admingenerated "LydAdminBundle:Registro_legislativoNew:index.html.twig" %}
+
+{% block form_ministerio %}
+    {{  parent() }}
+<div id="preview_ministerio">
+
+</div>
+<script type="text/javascript">
+    $(".field_ministerio").before("<div class='control-group form_field field_entity guion_ministerio'> - </div>");
+    $(".field_ministerio").after("<div class='control-group form_field field_entity preview_ministerio'></div>");
+    $(document).ready(function(){
+        $('#new_registrolegislativo_ministerio').change(function(){
+           var digito = $('#new_registrolegislativo_ministerio').val();
+           $(".preview_ministerio").html('<div class="control-group form_field field_entity preview_ministerio"><img src="{{ asset('bundles/lydadmin/images/load.gif') }}" alt="cargando" width="20px" height="20px"/></div>');
+          
+           $.ajax({
+             url: "{{ path('ver_ministerio') }}",
+             type: "post",
+             data: {"digito": digito},
+             dataType: "json",
+             success: function(data){
+                 $(".preview_ministerio").html("<strong>"+data+"</strong>");
+             },
+             error: function(){
+                 $(".preview_ministerio").html("<strong></strong>"); 
+             }
+           });
+           
+           
+        });
+    });
+    
+    
+</script>
+{% endblock %}

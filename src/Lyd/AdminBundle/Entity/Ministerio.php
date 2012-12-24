@@ -21,7 +21,7 @@ class Ministerio
 
 
     public function __toString() {
-      return sprintf('%d - %s', $this->getDigito(), $this->getNombre());
+      return sprintf('%d', $this->getDigito());
     }
     /**
      * Get id
